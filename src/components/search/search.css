@@ -1,0 +1,114 @@
+/*container*/
+
+section .container-master {
+  max-width: 93rem;
+}
+
+/* Search */
+
+.container-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20rem;
+  background-color: var(--background-el);
+  color: inherit;
+  border-radius: 0.4rem;
+  border: none;
+  box-shadow: 0.2rem rgba(0, 0, 0, 0.06), 0.2rem rgba(0, 0, 0, 0.12);
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin: 1.5rem;
+}
+
+.icon-search {
+  color: inherit;
+  width: 1.5rem;
+  margin-left: 2rem;
+}
+
+.search {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: justify;
+  background-color: var(--background-el);
+  color: inherit;
+  width: 20rem;
+  border-radius: 0.4rem;
+  padding: 1.25rem;
+  border: none;
+  box-shadow: 0.2rem rgba(0, 0, 0, 0.06), 0.2rem rgba(0, 0, 0, 0.12);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.search:focus {
+  outline: none;
+}
+
+.search::placeholder {
+  text-align: left;
+  color: inherit;
+}
+
+.fa-search {
+  margin-left: 1rem;
+}
+
+/* Dropdown */
+.dropdown {
+  display: flex;
+  justify-content: space-between;
+  width: 12rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  text-align: justify;
+  background-color: var(--background-el);
+  box-shadow: 0.2rem rgba(0, 0, 0, 0.06), 0.2rem rgba(0, 0, 0, 0.12);
+  padding: 1.25rem;
+  border-radius: 0.3rem;
+  font-size: 0.96rem;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.dropdown ul {
+  background-color: var(--background-el);
+  position: absolute;
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0.2rem rgba(0, 0, 0, 0.06), 0.2rem rgba(0, 0, 0, 0.12);
+  top: 100%;
+  left: 0;
+  list-style-type: none;
+  z-index: 1;
+}
+
+.dropdown.open ul {
+  display: block;
+}
+
+.dropdown ul li {
+  padding: 1.25rem 0;
+}
+
+@media (min-width: 763px) {
+  .dropdown {
+    width: 12rem;
+    cursor: pointer;
+  }
+
+  .container-search {
+    margin: 0;
+  }
+
+  section .container-master {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 88rem;
+    padding-top: 3rem;
+  }
+}
