@@ -4,13 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 // components
 import Header from "../components/header/header";
-import { BorderCountry } from "../components/containers/border-country";
 // styles
 import "./detail.css";
 
 const Details = () => {
   const location = useLocation();
   const history = useHistory();
+  console.log(location.state.country);
 
   return (
     <>
@@ -29,18 +29,14 @@ const Details = () => {
         <div className="container-detail">
           <div className="flag-img">
             <img
-              src={location.state.country.flag}
-              alt={location.state.country.name}
+              src={location.state.country.flags.png}
+              alt={location.state.country.flags.alt}
             />
           </div>
           <div className="container-flex">
-            <h2>{location.state.country.name}</h2>
+            <h2>{location.state.country.name.common}</h2>
             <div className="detail-body">
               <div className="detail-col-left">
-                <p>
-                  <strong>Native name: </strong>
-                  {location.state.country.nativeName}
-                </p>
                 <p>
                   <strong>Population: </strong>
                   {location.state.country.population}
@@ -55,33 +51,9 @@ const Details = () => {
                 </p>
                 <p>
                   <strong>Capital: </strong>
-                  {location.state.country.capital}
+                  {location.state.country.capital[0]}
                 </p>
               </div>
-              <div className="detail-col-right">
-                <p>
-                  <strong>Top Level Domain: </strong>
-                  {location.state.country.topLevelDomain[0]}
-                </p>
-                <p>
-                  <strong>Currencies: </strong>
-                  {location.state.country.currencies.map(
-                    (currency) => currency.code
-                  )}
-                </p>
-                <p>
-                  <strong>Languages: </strong>
-                  {location.state.country.languages.map(
-                    (language) => language.name
-                  )}
-                </p>
-              </div>
-            </div>
-            <div className="button-container">
-              <strong>Border Countries:</strong>
-              {location.state.country.borders.map((border) =>
-                BorderCountry(border)
-              )}
             </div>
           </div>
         </div>

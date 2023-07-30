@@ -5,6 +5,7 @@ import "./item.css";
 
 const Item = ({ country }) => (
   <Link
+    className="link"
     to={{
       pathname: "/details",
       state: {
@@ -14,10 +15,10 @@ const Item = ({ country }) => (
   >
     <div className="country">
       <div>
-        <img src={country.flag} alt={country.name} />
+        <img src={country.flags.png} alt={country.flags.alt} />
       </div>
       <div className="country-infos">
-        <h2 className="country-name">{country.name}</h2>
+        <h2 className="country-name">{country.name.common}</h2>
         <p>
           <strong>Population: </strong>
           {country.population}
@@ -25,10 +26,6 @@ const Item = ({ country }) => (
         <p className="country-region">
           <strong>Region: </strong>
           {country.region}
-        </p>
-        <p>
-          <strong>Capital: </strong>
-          {country.capital}
         </p>
       </div>
     </div>

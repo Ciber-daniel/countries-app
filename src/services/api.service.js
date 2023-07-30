@@ -4,7 +4,7 @@ import NotFound from "../components/not-found";
 
 export const findAllCountries = async () => {
   try {
-    return (await fetch("https://restcountries.eu/rest/v2/all")).json();
+    return (await fetch("https://restcountries.com/v3.1/all")).json();
   } catch (error) {
     return <NotFound />;
   }
@@ -13,7 +13,7 @@ export const findAllCountries = async () => {
 export const findOneCountry = async (countryCode) => {
   try {
     return (
-      await fetch(`https://restcountries.eu/rest/v2/alpha/${countryCode}`)
+      await fetch(`https://restcountries.com/v3.1/alpha/${countryCode}`)
     ).json();
   } catch (error) {
     return <NotFound />;

@@ -17,7 +17,7 @@ const SearchInput = () => {
   return (
     <div className="container-search">
       <FontAwesomeIcon
-        class="icon-search"
+        className="icon-search"
         icon={faSearch}
         style={{ color: "inherit" }}
       />
